@@ -1,0 +1,67 @@
+VERSION ""
+
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_DATA_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+
+BS_:
+
+BU_: 
+
+BO_ 123 TPMS_Tire_Pressure: 6 Vector__XXX
+ SG_ TireRRPrsFL : 7|8@0+ (4,0) [0|1020] "kPaG" Vector__XXX 
+ SG_ TireRRPrsFR : 8|8@0+ (4,0) [0|1020] "kPaG" Vector__XXX 
+ SG_ TireRRPrsRL : 25|8@0+ (4,0) [0|1020] "kPaG" Vector__XXX 
+ SG_ TireRRPrsRR : 47|8@0+ (4,0) [0|1020] "kPaG" Vector__XXX 
+
+BO_ 456 OAT_Outside_Air_Temperature: 8 Vector__XXX
+ SG_ OtsAirTmp : 31|8@0+ (0.5,-40) [-40|87.5] "deg C" Vector__XXX
+ 
+BO_ 532 ABS: 6 Vector__XXX
+ SG_ BrakePedalPressure : 0|8@0+ (75,0) [0|19125] "kPa" Vector__XXX 
+ 
+BO_ 401 ECM: 8 Vector__XXX
+ SG_ EngineTorque : 3|12@0+ (0.5,-848) [-848|1199.5] "Nm" Vector__XXX 
+ 
+BO_ 464 WHEEL_SPEEDS: 8 VSA
+ SG_ WHEEL_SPEED_FL : 7|15@0+ (0.01,0) [0|250] "kph" EON
+ SG_ WHEEL_SPEED_FR : 8|15@0+ (0.01,0) [0|250] "kph" EON
+ SG_ WHEEL_SPEED_RL : 25|15@0+ (0.01,0) [0|250] "kph" EON
+ SG_ WHEEL_SPEED_RR : 42|15@0+ (0.01,0) [0|250] "kph" EON 
+
+BA_DEF_ SG_  "SignalType" STRING ;
+BA_DEF_ SG_  "SignalLongName" STRING ;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 10000;
+BA_DEF_DEF_  "SignalType" "";
+BA_DEF_DEF_  "SignalLongName" "";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_ "GenMsgCycleTime" BO_ 123 12;
+BA_ "GenMsgCycleTime" BO_ 401 12;
+BA_ "GenMsgCycleTime" BO_ 456 50;
+BA_ "GenMsgCycleTime" BO_ 464 50;
+BA_ "GenMsgCycleTime" BO_ 532 50;
